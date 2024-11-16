@@ -1,4 +1,4 @@
-<!-- signup.html -->
+<!-- signup.html --
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <!-- Blank header content -->
+        <!-- Blank header content --
         <header>
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="nav-links">
-                <!--<a href="book-appointment.html">Book Appointment</a>-->
+                <!--<a href="book-appointment.html">Book Appointment</a>--
                 <a href="#about-us">About Us</a>
                 <a href="#contact-us">Contact Us</a>
             </div>
@@ -57,5 +57,74 @@
             <button type="submit" class="signup-btn">Sign Up</button>
         </form>
     </div>
+</body>
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>sign up </title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'>
+<link rel="stylesheet" href="/css/log_reg.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="pop_box">
+    <div class="Header">
+      <span>sign up</span>
+    </div>
+
+    <div class="input_box">
+        <form id="signup-form" action="/signup" method="post">
+            <div class="input_box">
+                <input type="text" id="username" class="input-field" required>
+                <label for="username" class="label">First Name</label>
+            </div>
+            <div class="input_box">
+                <input type="text" id="username" class="input-field" required>
+                <label for="username" class="label">Last Name</label>
+            </div>
+           
+            <div class="input_box">
+                <input type="email" id="Email" class="input-field" required>
+                <label for="email"  class="label">Email</label>
+            </div>
+
+            <div class="input_box">
+                <input type="text" id="username" class="input-field" required>
+                <label for="username" class="label">Phone Number</label>
+            </div> 
+            <select id="userType" class="input-field" name="userType" required>
+                <option value="" class="options">select the user type</option>
+                <option value="client" class="options">Client</option>
+                <option value="lawyer" class="options">Lawyer</option>
+            </select>
+
+            
+            <div class="input_box">
+                <input type="password" id="pass" class="input-field" required>
+                <label for="pass" class="label">Password</label>
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+            <div class="input_box">
+                <input type="password" id="pass" class="input-field" required>
+                <label for="pass" class="label">Confirm Password</label>
+                <i class="bx bx-lock-alt icon"></i>
+            </div>             
+            <div class="input_box">
+                <button type="submit" class="input-submit">sign up</button>
+            </div>
+        </form> 
+    </div>    
+    
+    <div class="register_login">
+      <span>Already  have an account? <a href="login.html">login</a></span>
+    </div>
+  </div>
+</div>  
 </body>
 </html>
