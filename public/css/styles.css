@@ -1,19 +1,11 @@
 /* sign up page */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 body {
-    background-color: aliceblue;
     font-family: 'Arial', sans-serif;
-    margin: 0;
 }
 
 .container {
     max-width: 600px;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -22,10 +14,14 @@ body {
     font-size: 24px;
 }
 
+/* public/css/styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+}
 
 .container {
     max-width: 600px;
-    margin: 0 ;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -35,400 +31,32 @@ body {
     margin-bottom: 20px;
 }
 
-/* incoming index starts here */
-/* index stylling starts here */
-/* index stylling starts here */
- 
-  .header{
-    flex-direction: column;
-    background-color: aliceblue;
-    text-align: center;
-    padding: 10px;
-  }
-  .header h4{
-    font-size: small;
-  }
-  .conta{
+/* Style for the login form */
+#login-form {
     display: flex;
     flex-direction: column;
-    background-color: gold;
-    text-align: left;
-    justify-content: center;
-    padding: 30px;
-    border-radius: 40px 0 40px 0;
-  }
-  .conta i{
-    font-size: 30px;
-  }
-  .conta_link{
-    display: flex;
     align-items: center;
-  }
-  .header_section1{
-    font-size: small;
-    display: flex;
-    justify-content: space-between;
-  }
-  .header_section1 h5{
-    font-weight: bolder;
-    font-size: medium;
-  }
-  .header_section1 a{
-    font-size: larger;
-    font-weight: bolder;
-  }
-  .logo img{
-    width: 100px;
-    border-radius: 50%;
-  }
-  .nav{
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .option{
-    font-size: larger;
-    text-decoration: none;
-    color: black;
-  }
-  .option h4{
-    font-weight: bolder;
-  }
+}
 
-  .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
-  .video-background  {
-    position: relative;
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Set the desired height */
-    overflow: hidden;
-  }
-  
-  .video-background video {
-    position: absolute;
-    top: 0;
-    left: 0;
+#login-form input {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -5; /* Place behind the content */
-  }
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
 
-    .intro_section{
-      position: relative;
-      display: flex;
-      flex-wrap:wrap;
-      justify-content: space-between;
-      padding: 10px;
-    } 
-    .vid_container{
-      position: relative;
-      width: 100%; /* Adjust width as needed */
-      height: 800px; /* Set the desired height for your section */
-      overflow: hidden;
-    }
-    
-  .intro_words{
-    position: absolute;
-    top: 25%;
-    left: 5%;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.541),rgba(128, 128, 128, 0.432)) ;
+.login-btn {
+    background-color: #4CAF50;
     color: white;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: small;
-    width: 40%;
-    z-index: 10;
-  }
-  .mission{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align:center;
-    width: fit-content;
-  }
-  .mission h3{
-    background-color:gold;
-    font-weight:bolder;
-    text-align:center;
-    width: fit-content;
-    padding: 5px;
-    font-size: 30px;
-  }
-  .associates_pic{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gold;
-    width: 30%;
-    opacity: 50%;
-  }
-  .others{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:500px
-  }
-  
-  /* styling for the main content comes here */
-  
-  .footer{
-    display: flex;
-    color: black;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    background: repeating-linear-gradient(to top,black,gold 70%);
-  }
-  .form{
-    text-align: center;
-    color: white;
-    background-color: rgb(38, 3, 161);
-    padding: 10px;
-    border-radius: 10px;
-    width: 80%;
-    margin: 20px;
-  }
-  .form h6{
-    font-weight: bolder;
-    font-size: small;
-    font-style:italic;
-  }
-  #name,#email{
-    width: 40%;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 10px 20px;
     border: none;
-  }
-  #message{
-    width: 100%;
-    height: 150px;
     border-radius: 5px;
-    border: none;
-    resize: vertical;
-  }
-  #submit_button{
-    background-color: gold;
-    border: none;
-    color: rgb(3, 3, 3);
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10px;
     cursor: pointer;
-  }
-  .address{
-    display:flex;
-    justify-content: space-between;
-    flex-wrap:wrap;
-    padding: 5%;
-    margin: 20px;
-    width: 100%;
-  
-  }
-  .physical_address,.social_address,.contacts{
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid black;
-    padding: 10px;
-    margin: 5px;
-  
-    
-  }
-  .contacts a{
-    display:flex;
-    text-decoration: none;
-    margin: 5px;
-    color: black;
-  }
-  .social_address a{
-    text-decoration: none;
-    display: flex;
-    color: black;
-    margin: 5px;
-  
-  }
-  .contacts a i,.social_address a i{
-    margin:5px;
-  }
-  .copyright{
-    font-size: small;
-    text-align: center;
-    color:white; 
-    font-style: italic;
-    padding: 10px;
-  }
-  /* nav2 for screens less than 600px */
-  .nav2 {
-    display: none;
-    position: relative;
-    text-align: left;
-    margin: 10px;
-  }
-  
-  .nav2 i {
-    font-size: 24px;
-    cursor: pointer;
-  }
-  #close{
-    top: 0;
-    left: 0;
-    position: absolute;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: -1;
-    background-color: aliceblue;
-    padding: 5px;
-  }
-  .nav_links {
-    display: none;
-    position: absolute;
-    top: 99%;
-    left: 0;
-    background-color: gold;
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 5;
-    margin: 10px;
-  }
-  
-  .nav_links li {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 10px;
-  
-  }
-  
-  .nav_links li a {
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-    color: #000;
-    text-decoration: none;
-  }
-  .nav_links li a h4 {
-    font-weight: bolder;
-    font-size: medium;
-  }
-  .nav_links li a i {
-    font-size: 18px;
-    cursor: pointer;
-  
-  }
-  .nav_links li a:hover {
-    color:blue;
-    border-radius: 5px;
-  }
-  
-  
-  
-  @media screen and (max-width: 600px) {
-    .nav2 {
-      display: block;
-    }
-  
-    .nav{
-      display: none;
-    }
-    .physical_address,.social_address,.contacts{
-      border-left: none;
-      align-items: left;
-      border-bottom: 2px solid black;
-      width: 100%;
-      padding-left: 10%;
-      
-    }
-   .address{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-  
-    
-   }
-   .address h4{
-    text-align:center;
-   }
-   .contacts{
-    border: none;
-   }
-  } 
-  
-  /* index styling ends here */
-  
+}
 
-  /* services styling starts here */
-  .main h3{
-    text-align: center;
-  }
-  .service_intro{
-    color: black ;
-  }
-  .service1,.service2,.service3,.service4,.service5{
-    display: flex;
-  }
-  
-  
-  .service_name1,.service_name2,.service_name3,.service_name4,.service_name5{
-    position: absolute;
-    background-color: black;
-    color: white;
-    font-size: x-large;
-    padding: 5px;
-    height: fit-content;
-  }
-  .service_name1{
-    right:50%;
-  }
-  .service_name2{
-    left: 50%;
-  }
-  .service_name3{
-    right: 50%;
-  }
-  .service_name4{
-    left: 50%;
-  }
-  .description{
-    display: flex;
-    width: 50%;
-    text-align: center;
-    align-items: center;
-  }
-  .description p{
-    padding: 20px;
-  }
-  .service1 img{
-    width: 50%;
-    border-right: 4px solid black;
-  
-    
-  }
-  .service2 img{
-    width: 50%;
-    border-left: 4px solid black;
-  
-  }
-  .service3 img{
-    width: 50%;
-    border-right: 4px solid black;
-  
-  }
-  .service4 img{
-    width: 50%;
-    border-left: 4px solid black;
-  
-  
-  }
-  
-  /* services styling ends here */
-  
-  /* incoming index ends here */
-
-
+.login-btn:hover {
+    background-color: #45a049;
+}
 
 /* index.html page */
 body {
@@ -456,7 +84,7 @@ header {
 }
 
 .logo-img {
-    width: 50px; 
+    width: 50px; /* Adjust as needed */
 }
 
 .nav-links {
@@ -677,4 +305,4 @@ textarea {
         width: 100%;
         margin-left: 0;
     }
-} 
+}

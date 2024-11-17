@@ -1,5 +1,5 @@
-<!-- appointment-booking.html --
- <!DOCTYPE html>
+<!-- appointment-booking.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <!-- Your header content goes here --
+        <!-- Your header content goes here -->
         <header>
             <div class="logo-container">
                 <a href="homepage.html" class="logo-link">
@@ -24,14 +24,14 @@
             <!--<div class="auth-buttons">
                 <a href="signup.html" class="auth-button">Sign Up</a>
                 <a href="login.html" class="auth-button">Log In</a>
-            </div>--
+            </div>-->
         </header>
     </header>
 
     <div class="container">
         <h1 class="booking-title">Book an Appointment</h1>
         <form id="appointment-form" action="/book-appointment" method="post">
-            <!-- Input fields for booking form --
+            <!-- Input fields for booking form -->
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>
 
@@ -53,103 +53,5 @@
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
-</body>
-</html    -->
-
-
-
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>book appointment </title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/abd9be1116.js" crossorigin="anonymous"></script>
-  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'>
-<link rel="stylesheet" href="/css/appointment&booking.css">
-</head>
-<body>
-<div class="header">
-    <div class="header_section1">
-        <div class="logo">
-        <img src="/images/logo.jpeg" >
-        <h5>Mwenda Gitari & Associates Advocates</h5>
-        </div>
-        <div class="conta">
-        <h5>Quick reach us on:</h5>
-        <div class="conta_link">
-            <i class="fa-solid fa-square-phone"></i>
-            <a href="tel:+254729428378">+254-729-428-378</a>
-        </div>
-        
-        </div>
-    </div>
-    <div class="header_section2">
-        <div class="nav">
-        <a href="index.html" class="option"><i class="fa-solid fa-house"></i><h4>Home</h4></a>
-        <a href="index.html#services_offered" class="option"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a>
-        <a href="index.html#contact" class="option"><i class="fa-solid fa-message"></i><h4>Contacts</h4></a>
-        </div>
-        <!-- nav for screen less than 600px -->
-        <div class="nav2">
-        <i id="bar" class="fa-solid fa-bars"></i>
-        <i id="close" class="fa-solid fa-times"></i>
-        <div class="nav_links">
-            <li><a href="index.html"><i class="fa-solid fa-house"></i><h4>Home</h4></a></li>
-            <li><a href="index.html#services_offered"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a></li>
-            <li><a  href="index.html#contact"><i class="fa-solid fa-message"></i><h4>contacts</h4></a></li>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="wrapper">
-  <div class="pop_box">
-    <div class="Header">
-      <span>book appointment</span>
-    </div>
-
-    <div class="input_box">
-        
-         <form id="appointment-form" action="/book-appointment" method="post">
-            <!-- Input fields for booking form -->
-             <div class="name_email">
-                <div class="input_box">
-                    <input type="text" class="input-field" id="fullName" name="fullName" required>
-                    <label for="fullName" class="label">Full Name:</label>
-                </div>
-                <div class="input_box">
-                    <input type="email" class="input-field" id="email" name="email" required> 
-                    <label for="email" class="label">Email:</label>   
-                </div>
-             </div>
-            <div class="input_box">
-                <input type="tel" class="input-field" id="phoneNumber" name="phoneNumber" required> 
-                <label for="phoneNumber" class="label">Phone Number:</label>   
-            </div>
-            <div class="date_time">
-                <div class="input_box">
-                    <input type="date" class="input-field" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>">   
-                    <label for="date" class="label">Date:</label> 
-                </div>
-                <div class="input_box">
-                    <input type="time" class="input-field" id="time" name="time" required>
-                    <label for="time" class="label">Time:</label>
-                </div>
-            </div>
-            <div class="input_box">   
-                <textarea class="reason_field" id="message" name="message" rows="4"></textarea>
-                <label for="message" class="label">Reason for Appointment:</label>
-            </div>
-
-            <button type="submit" class="input-submit">Submit</button>
-        </form>
-        
-    </div>    
-    
-  </div>
-</div> 
-<script src="/js/index.js"></script>
 </body>
 </html>
