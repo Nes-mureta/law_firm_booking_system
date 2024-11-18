@@ -38,3 +38,9 @@ document.getElementById('contactForm').addEventListener('submit', function(event
             alert('An error occurred. Please try again.');
         });
   });
+
+
+
+
+
+//testing function how to create a new instance of the service provider with the given parameters
