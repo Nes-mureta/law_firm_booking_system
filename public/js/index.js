@@ -43,4 +43,3 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
 
 
-//testing function how to create a new instance of the service provider with the given parameters

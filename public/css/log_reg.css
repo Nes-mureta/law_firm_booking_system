@@ -106,7 +106,7 @@
     font-size: 16px;
     background: transparent;
     color: var(--second-color);
-    padding-inline: 20px 50px;
+    padding-inline: 20% 1%;
     border: 2px solid var(--primary-color);
     border-radius: 30px;
     outline: none;
