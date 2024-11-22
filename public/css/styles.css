@@ -126,7 +126,7 @@ body {
     .vid_container{
       position: relative;
       width: 100%; /* Adjust width as needed */
-      height: 800px; /* Set the desired height for your section */
+      height: 700px; /* Set the desired height for your section */
       overflow: hidden;
     }
     
@@ -175,7 +175,7 @@ body {
     object-fit: cover;
   }
   .intro_img img{
-    filter: blur(0); /* Normal image clarity */
+    filter: blur(0); 
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
   }
