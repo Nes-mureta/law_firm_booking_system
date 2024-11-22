@@ -131,16 +131,12 @@ body {
     }
     
   .intro_words{
-    position: absolute;
-    top: 25%;
-    left: 5%;
     background-image: radial-gradient(rgba(0, 0, 0, 0.541),rgba(128, 128, 128, 0.432)) ;
     color: white;
     padding: 10px;
     border-radius: 10px;
-    font-size: small;
+    font-size: 20px;
     width: 40%;
-    z-index: 10;
   }
   .mission{
     display: flex;
@@ -149,29 +145,40 @@ body {
     text-align:center;
     width: fit-content;
   }
-  .mission h3{
-    background-color:gold;
+  .mission h4{
+    color: gold;
     font-weight:bolder;
     text-align:center;
-    width: fit-content;
-    padding: 5px;
+    padding-top: 5px;
     font-size: 30px;
+    text-decoration: underline;
   }
-  .associates_pic{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gold;
-    width: 30%;
-    opacity: 50%;
-  }
-  .others{
+
+  .intro_content{
+    position: absolute;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    height:500px
+    top: 10%;
+    left: 5%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: small;
+    z-index: 10;
+
   }
-  
+  .intro_img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+  .intro_img img{
+    filter: blur(0); /* Normal image clarity */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+  }
   /* styling for the main content comes here */
   
   .footer{
