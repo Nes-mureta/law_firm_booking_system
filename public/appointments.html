@@ -1,4 +1,4 @@
-<!-- appointments.html -->
+<!-- appointments.html --
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,16 +22,95 @@
         <!--<div class="auth-buttons">
             <a href="signup.html" class="auth-button">Sign Up</a>
             <a href="login.html" class="auth-button">Log In</a>
-        </div>-->
+        </div>--
     </header>
 
     <div class="container">
         <h1 class="appointments-title">Appointments</h1>
 
-        <!-- Appointments list will be dynamically generated here -->
+        <!-- Appointments list will be dynamically generated here --
         <div id="appointments-list"></div>
     </div>
 
     <script src="/js/appointments.js"></script>
+</body>
+</html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointments</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody id="appointments-table-body">
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch appointments from the server and render them in the table
+        async function fetchAppointments() {
+            try {
+                const response = await fetch('/appointments'); // Fetch data from the server
+                const appointments = await response.json(); // Parse JSON response
+
+                // Get the table body element
+                const tableBody = document.getElementById('appointments-table-body');
+
+                // Clear the table before adding rows
+                tableBody.innerHTML = '';
+
+                // Populate the table with appointments
+                appointments.forEach(appointment => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td>${appointment.fullName}</td>
+                        <td>${appointment.email}</td>
+                        <td>${appointment.phoneNumber}</td>
+                        <td>${appointment.date}</td>
+                        <td>${appointment.time}</td>
+                        <td>${appointment.message}</td>
+                    `;
+
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching appointments:', error);
+            }
+        }
+
+        // Call the function to fetch and display appointments when the page loads
+        fetchAppointments();
+    </script>
 </body>
 </html>
