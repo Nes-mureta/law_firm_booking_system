@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "lucrisnes",
+    "database": "law_firm_system",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "lucrisnes",
+    "database": "law_firm_system",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "lucrisnes",
+    "database": "law_firm_system",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
