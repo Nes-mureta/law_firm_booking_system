@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto'); // For key generation
 const nodemailer = require('nodemailer'); // For sending emails
 const Admin = require('../models/admin'); // Adjust based on your models
+const { error } = require('console');
 
 // Configure nodemailer
 const transporter = nodemailer.createTransport({
@@ -22,12 +23,12 @@ router.post('/Admin', async (req, res) => {
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            return res.status(400).send('Invalid email address');
+            return res.status(400).json({error:'Invalid email address'});
         }
 
         // Check if passwords match
         if (password !== confirmPassword) {
-            return res.status(400).send('Passwords do not match');
+            return res.status(400).json({error:'Passwords do not match'});
         }
 
         // Hash the password
@@ -51,10 +52,10 @@ router.post('/Admin', async (req, res) => {
             html: `<p>A new user (${firstName} ${lastName}) has registered and is requesting admin privileges. Click <a href="${approvalLink}">here</a> to approve .</p>`,
         });
 
-        res.status(201).send('Registration successful. Awaiting Admin approval.');
+        res.status(201).json({error:'Registration successful. Awaiting Admin approval.'});
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({error:'Internal Server Error'});
     }
 });
 
@@ -67,7 +68,7 @@ router.get('/approve/:email', async (req, res) => {
         const user = await Admin.findOne({ where: { email } });
 
         if (!user) {
-            return res.status(404).send('User not found');
+            return res.status(404).json({error:'User not found'});
         }
 
         // Generate a unique key and save it to the user's record
@@ -75,10 +76,10 @@ router.get('/approve/:email', async (req, res) => {
         user.key = generatedKey;
         await user.save();
 
-        res.status(200).send('Admin approved successfully. They can now log in.');
+        res.status(200).json({error:'Admin approved successfully. They can now log in.'});
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
 
@@ -91,26 +92,26 @@ router.post('/Admin_login', async (req, res) => {
         const user = await Admin.findOne({ where: { email } });
 
         if (!user) {
-            return res.status(404).send('User not found');
+            return res.status(404).json({error: 'User not found'});
         }
 
         // Check if the account is approved
         if (!user.key) {
-            return res.status(403).send('Your account is not approved yet.');
+            return res.status(403).json({error: 'Your account is not approved yet.'});
         }
 
         // Compare the entered password with the hashed password in the database
         const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (!passwordMatch) {
-            return res.status(401).send('Incorrect password');
+            return res.status(401).json({error: 'Incorrect password'});
         }
 
         // Successful login, redirect to homepage
         res.redirect('/appointments.html');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
 

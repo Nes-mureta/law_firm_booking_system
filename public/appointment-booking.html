@@ -88,18 +88,18 @@
     </div>
     <div class="header_section2">
         <div class="nav">
-        <a href="index.html" class="option"><i class="fa-solid fa-house"></i><h4>Home</h4></a>
-        <a href="index.html#services_offered" class="option"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a>
-        <a href="index.html#contact" class="option"><i class="fa-solid fa-message"></i><h4>Contacts</h4></a>
+        <a href="homepage.html" class="option"><i class="fa-solid fa-house"></i><h4>Home</h4></a>
+        <a href="homepage.html#services_offered" class="option"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a>
+        <a href="homepage.html#contact" class="option"><i class="fa-solid fa-message"></i><h4>Contacts</h4></a>
         </div>
         <!-- nav for screen less than 600px -->
         <div class="nav2">
         <i id="bar" class="fa-solid fa-bars"></i>
         <i id="close" class="fa-solid fa-times"></i>
         <div class="nav_links">
-            <li><a href="index.html"><i class="fa-solid fa-house"></i><h4>Home</h4></a></li>
-            <li><a href="index.html#services_offered"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a></li>
-            <li><a  href="index.html#contact"><i class="fa-solid fa-message"></i><h4>contacts</h4></a></li>
+            <li><a href="homepage.html"><i class="fa-solid fa-house"></i><h4>Home</h4></a></li>
+            <li><a href="homepage.html#services_offered"><i class="fa-solid fa-scale-balanced"></i><h4>Services</h4></a></li>
+            <li><a  href="homepage.html#contact"><i class="fa-solid fa-message"></i><h4>contacts</h4></a></li>
             </div>
         </div>
     </div>
@@ -112,8 +112,7 @@
 
     <div class="input_box">
         
-         <form id="appointment-form" action="/book-appointment" method="post">
-            <!-- Input fields for booking form -->
+         <form id="appointment-form" onsubmit="handleAppointment(event)" action="/book-appointment" method="post">
              <div class="name_email">
                 <div class="input_box">
                     <input type="text" class="input-field" id="fullName" name="fullName" required>
@@ -151,5 +150,6 @@
   </div>
 </div> 
 <script src="/js/index.js"></script>
+<script src="js/errors.js"></script>
 </body>
 </html>

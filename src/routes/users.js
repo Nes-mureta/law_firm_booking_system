@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
 
         // Check if passwords match
         if (password !== confirmPassword) {
-            return res.status(400).send('Passwords do not match');
+            return res.status(400).json({ error: 'Passwords do not match' });
         }
 
         // Hash the password
@@ -31,7 +31,7 @@ router.post('/signup', async (req, res) => {
         
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
@@ -43,21 +43,21 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({ where: { email } });
 
         if (!user) {
-            return res.status(404).send('User not found');
+            return res.status(404).json({ error: 'User not found check email and passcode' });
         }
 
         // Compare the entered password with the hashed password in the database
         const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (!passwordMatch) {
-            return res.status(401).send('Incorrect password');
+            return res.status(401).json({ error: 'Incorrect password' });
         }
 
         // Successful login, redirect to homepage
         res.redirect('/homepage');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({ error: 'Internal Server Error please try again' });
     }
 });
 
