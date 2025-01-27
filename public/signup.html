@@ -60,7 +60,6 @@
 </body>
 </html>  -->
 
-# the one
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -79,24 +78,24 @@
     </div>
 
     <div class="input_box">
-        <form id="signup-form" action="/signup" method="post">
+        <form id="signup-form"  action="/signup" method="post" onsubmit="handleSignup(event)">
             <div class="input_box">
                 <input type="text" id="username" name="firstName" class="input-field" required>
-                <label for="username" class="label">First Name</label>
+                <label for="username" class="label">First Name:</label>
             </div>
             <div class="input_box">
                 <input type="text" id="username" name="lastName" class="input-field" required>
-                <label for="username" class="label">Last Name</label>
+                <label for="username" class="label">Last Name:</label>
             </div>
            
             <div class="input_box">
                 <input type="email" id="Email" name="email" class="input-field" required>
-                <label for="email"  class="label">Email</label>
+                <label for="email"  class="label">Email:</label>
             </div>
 
             <div class="input_box">
                 <input type="text" id="username" name="phoneNumber" class="input-field" required>
-                <label for="username" class="label">Phone Number</label>
+                <label for="username" class="label">Phone:</label>
             </div> 
             <select id="userType" class="input-field" name="userType" required>
                 <option value="" class="options">select the user type</option>
@@ -107,13 +106,12 @@
             
             <div class="input_box">
                 <input type="password" id="pass" name="password" class="input-field" required>
-                <label for="pass" class="label">Password</label>
+                <label for="pass" class="label">Password:</label>
                 <i class="bx bx-lock-alt icon"></i>
             </div>
             <div class="input_box">
                 <input type="password" id="pass" name="confirmPassword" class="input-field" required>
-                <label for="pass" class="label">Confirm Password</label>
-                <i class="bx bx-lock-alt icon"></i>
+                <label for="pass" class="label">Confirm:</label>
             </div>             
             <div class="input_box">
                 <button type="submit" class="input-submit">sign up</button>
@@ -126,5 +124,6 @@
     </div>
   </div>
 </div>  
+<script src="js/errors.js"></script>
 </body>
 </html>

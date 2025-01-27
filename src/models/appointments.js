@@ -31,15 +31,11 @@ const Appointment = sequelize.define('Appointment', {
         },
     },
     date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY, 
         allowNull: false,
-        validate: {
-            isDate: true,
-            isAfter: new Date().toISOString().split('T')[0],
-        },
     },
     time: {
-        type: DataTypes.TIME,
+        type: DataTypes.TIME, 
         allowNull: false,
     },
     message: {
