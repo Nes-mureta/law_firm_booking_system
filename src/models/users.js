@@ -1,4 +1,3 @@
-// src/models/users.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
@@ -35,6 +34,10 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    key: {
+        type: DataTypes.STRING, // Field to store the approval key
+        allowNull: true, // Allow null for clients and unapproved lawyers
+    },
 });
-module.exports = User;
 
+module.exports = User;

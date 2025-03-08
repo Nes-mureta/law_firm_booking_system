@@ -47,3 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Fetch appointments from the server and render them in the table
+async function fetchAppointments() {
+    try {
+        const response = await fetch('/appointments'); // Fetch data from the server
+        const appointments = await response.json(); // Parse JSON response
+
+        // Get the table body element
+        const tableBody = document.getElementById('appointments-table-body');
+
+        // Clear the table before adding rows
+        tableBody.innerHTML = '';
+
+        // Populate the table with appointments
+        appointments.forEach(appointment => {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${appointment.fullName}</td>
+                <td>${appointment.email}</td>
+                <td>${appointment.phoneNumber}</td>
+                <td>${appointment.date}</td>
+                <td>${appointment.time}</td>
+                <td>${appointment.message}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error fetching appointments:', error);
+    }
+}
+
+// Call the function to fetch and display appointments when the page loads
+fetchAppointments();

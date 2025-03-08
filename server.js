@@ -8,8 +8,6 @@ const PORT = process.env.PORT || 3000;
 
 const userRoutes = require('./src/routes/users');
 const appointmentRoutes = require('./src/routes/appointments');
-const adminRoutes = require('./src/routes/Admin');
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -23,7 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', userRoutes);
 app.use('/', appointmentRoutes);
 app.use(appointmentRoutes)
-app.use('/', adminRoutes);
 // Connect to the database
 sequelize.sync()
     .then(() => {

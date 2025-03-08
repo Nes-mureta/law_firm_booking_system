@@ -1,6 +1,6 @@
-// all error handler for forms
+// All error handler for forms
 async function handleFormSubmission(event, formId, endpoint, redirectUrl) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const form = document.getElementById(formId);
     const formData = new FormData(form);
@@ -18,13 +18,14 @@ async function handleFormSubmission(event, formId, endpoint, redirectUrl) {
             body: JSON.stringify(data),
         });
 
+        const responseData = await response.json();
+
         if (!response.ok) {
             // Extract error message from JSON response
-            const errorData = await response.json();
-            alert(errorData.error || 'An unexpected error occurred'); 
+            alert(responseData.error || 'An unexpected error occurred');
         } else {
-            // If successful, redirect to the specified URL
-            window.location.href = redirectUrl;
+            // If successful, redirect to the specified URL or use the redirectUrl from the response
+            window.location.href = responseData.redirectUrl || redirectUrl;
         }
     } catch (error) {
         console.error('Error:', error);
@@ -34,7 +35,7 @@ async function handleFormSubmission(event, formId, endpoint, redirectUrl) {
 
 // Wrapper for Signup Form Submission
 function handleSignup(event) {
-    handleFormSubmission(event, 'signup-form', '/signup', '/homepage');
+    handleFormSubmission(event, 'signup-form', '/signup', '/login.html');
 }
 
 // Wrapper for Login Form Submission
@@ -47,12 +48,3 @@ function handleAppointment(event) {
     handleFormSubmission(event, 'appointment-form', '/book-appointment', '');
 }
 
-// Wrapper for Admin Signup Form Submission
-function handleAdminSignup(event) {
-    handleFormSubmission(event, 'signup-form', '/Admin', '/admin.html');
-}
-
-// Wrapper for Admin Login Form Submission
-function handleAdminLogin(event) {
-    handleFormSubmission(event, 'login-form', '/Admin_login', '/appointments.html');
-}
