@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/users');
 const bcrypt = require('bcrypt');
-const crypto = require('crypto'); // For key generation
-const nodemailer = require('nodemailer'); // For sending emails
+const crypto = require('crypto'); 
+const nodemailer = require('nodemailer');
 
 // Configure nodemailer
 const transporter = nodemailer.createTransport({
@@ -22,6 +22,12 @@ router.post('/signup', async (req, res) => {
         // Check if passwords match
         if (password !== confirmPassword) {
             return res.status(400).json({ error: 'Passwords do not match' });
+        }
+
+        // Check if the email already exists
+        const existingUser = await User.findOne({ where: { email } });
+        if (existingUser) {
+            return res.status(400).json({ error: 'The email already has an active account.' });
         }
 
         // Hash the password
